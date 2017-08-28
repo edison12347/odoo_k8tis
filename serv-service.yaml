@@ -1,0 +1,15 @@
+apiVesrsion: v1
+kind: Service
+metadata:
+  lables:
+    name: odoo-server
+  name: odoo-server
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8069
+      protocol: TCP
+  selector:
+    app: odoo-shop
+    tier: frontend
