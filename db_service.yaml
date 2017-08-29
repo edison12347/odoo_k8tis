@@ -1,0 +1,15 @@
+apiVesrsion: v1
+kind: Service
+metadata:
+  lables:
+    name: db-server
+  name: db-server
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5430
+      targetPort: 5432
+      protocol: TCP
+  selector:
+    app: odoo-shop
+    tier: backend
